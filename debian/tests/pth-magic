@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+cmd="import sys; sys.exit('cov_core_init' in sys.modules)"
+
+# This one returns exit code 0 because without the triggering environment
+# variable, the module is not imported.  (Note that this doesn't test whether
+# it actually gets initialized, but we'll just assume that.)
+python3 -c "$cmd" || exit 1
+
+# With the triggering environment variable, the import happens.
+COV_CORE_SOURCE=1 python3 -c "$cmd" && exit 1
+
+exit 0

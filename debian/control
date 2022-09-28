@@ -1,0 +1,21 @@
+Source: cov-core
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Barry Warsaw <barry@debian.org>
+Homepage: https://github.com/schlamar/cov-core
+Section: python
+Priority: optional
+Build-Depends: debhelper-compat (= 9),
+               dh-python,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.0.0
+Vcs-Git: https://salsa.debian.org/python-team/modules/cov-core.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/cov-core
+
+Package: python3-cov-core
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-nose2
+Description: plugin core for use by pytest-cov, nose-cov and nose2-cov
+ This is a lib package for use by pytest-cov, nose-cov and nose2-cov.
+ .
+ This is the Python 3 compatible package.
